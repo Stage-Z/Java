@@ -30,7 +30,7 @@ public class GradingSystem {
             System.out.println("You scored A+ Grade. Good Work!");
             result = "You Passed";
         } else if(percentage >= 80 && percentage < 90) {
-            System.out.println("You scored A Grade. Nice Work!");
+            System.out.println("You scored A- Grade. Nice Work!");
             result = "You Passed";
         } else if(percentage >= 70 && percentage < 80) {
             System.out.println("You scored B Grade. Keep it up!");
