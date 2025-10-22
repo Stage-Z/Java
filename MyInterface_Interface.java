@@ -3,17 +3,20 @@ interface MyInterface {
     public int method2();
 }
 
-abstract class MyInterface2 implements MyInterface {
+class MyInterface_Interface implements MyInterface {
+    @Override
     public void method1() {
         System.out.println("Implementation of Method1");
     }
 
-    public void nethod2() {
+    @Override
+    public int method2() {
         System.out.println("Implementation of Method2");
+        return 2;
     }
 
     public static void main(String[] args) {
-        MyInterface obj = new MyInterface2();
+        MyInterface obj = new MyInterface_Interface();
         obj.method1();
         obj.method2();
     }
