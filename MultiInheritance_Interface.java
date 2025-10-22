@@ -7,11 +7,13 @@ interface Swimmable {
 }
 
 class Duck implements Flyable, Swimmable {
+    @Override
     public void fly() {
         System.out.println("Duck flies low");
     }
 
-public void swim() {
+    @Override
+    public void swim() {
     System.out.println("Duck swims in the pond");
     }
 }
