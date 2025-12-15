@@ -28,7 +28,7 @@ public class CBS_Revised {
 
             switch (option) {
 
-                case 1:
+                case 1 -> {
                     System.out.println("\n--- Register New Customer ---");
 
                     System.out.print("Enter Name: ");
@@ -46,9 +46,9 @@ public class CBS_Revised {
                     System.out.println("Generated Customer ID: " + (count + 1));
 
                     count++;
-                    break;
+                }
 
-                case 2:
+                case 2 -> {
                     System.out.println("\n--- Edit Customer Name ---");
 
                     System.out.print("Enter Customer ID: ");
@@ -64,9 +64,9 @@ public class CBS_Revised {
                     customerNames[idName - 1] = sc.nextLine();
 
                     System.out.println("Name Updated Successfully!");
-                    break;
+                }
 
-                case 3:
+                case 3 -> {
                     System.out.println("\n--- Check Balance ---");
 
                     System.out.print("Enter Customer ID: ");
@@ -78,9 +78,9 @@ public class CBS_Revised {
                     }
 
                     System.out.println("Current Balance: ₹" + customerBalances[idBal - 1]);
-                    break;
+                }
 
-                case 4:
+                case 4 -> {
                     System.out.println("\n--- Deposit / Withdraw ---");
 
                     System.out.print("Enter Customer ID: ");
@@ -100,9 +100,9 @@ public class CBS_Revised {
                         customerBalances[idUpdate - 1] += changeAmount;
                         System.out.println("Transaction Successful!");
                     }
-                    break;
+                }
 
-                case 5:
+                case 5 -> {
                     System.out.println("\n------- Account Summary -------");
 
                     if (count == 0) {
@@ -116,14 +116,14 @@ public class CBS_Revised {
                                 " | Balance: ₹" + customerBalances[i]);
                     }
                     System.out.println("--------------------------------");
-                    break;
+                }
 
-                case 6:
+                case 6 -> {
                     System.out.println("Exiting CBS... Goodbye!");
                     return;
+                }
 
-                default:
-                    System.out.println("Invalid Option. Select between 1–6.");
+                default -> System.out.println("Invalid Option. Select between 1–6.");
             }
         }
     }

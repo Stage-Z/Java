@@ -18,12 +18,13 @@ class CubeSide {
     }
     public void setVolume(double volume) {
         if (volume > 0) {
-            this.volume = volume = sideLength * sideLength * sideLength;
+            this.volume = sideLength * sideLength * sideLength;
         }
     }
 }
 
 public class CubeVolume {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
 

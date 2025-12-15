@@ -25,7 +25,7 @@ public class BankSystemArray {
 
             switch (choice) {
 
-                case 1:
+                case 1 -> {
                     System.out.println("\nAdd Customer");
 
                     System.out.print("Enter Customer Name: ");
@@ -37,15 +37,15 @@ public class BankSystemArray {
                     System.out.println("Account created successfully.");
 
                     totalCustomers++;
-                    break;
+                }
 
-                case 2:
+                case 2 -> {
                     System.out.print("\nEnter Customer ID (1 - " + totalCustomers + "): ");
                     int id2 = sc.nextInt();
                     sc.nextLine();
 
                     if (id2 < 1 || id2 > totalCustomers) {// Customer ID must be at least 1.Customer ID cannot be
-                                                          // greater than the number of customers currently stored.
+                        // greater than the number of customers currently stored.
                         System.out.println("Invalid Customer ID.");
                         break;
                     }
@@ -54,9 +54,9 @@ public class BankSystemArray {
                     names[id2 - 1] = sc.nextLine();
 
                     System.out.println("Name updated successfully.");
-                    break;
+                }
 
-                case 3:
+                case 3 -> {
                     System.out.print("\nEnter Customer ID (1 - " + totalCustomers + "): ");
                     int id3 = sc.nextInt();
 
@@ -66,9 +66,9 @@ public class BankSystemArray {
                     }
 
                     System.out.println("Account Balance: " + balances[id3 - 1]);
-                    break;
+                }
 
-                case 4:
+                case 4 -> {
                     System.out.print("\nEnter Customer ID (1 - " + totalCustomers + "): ");
                     int id4 = sc.nextInt();
 
@@ -83,23 +83,23 @@ public class BankSystemArray {
                     balances[id4 - 1] += amt;
 
                     System.out.println("Balance updated successfully.");
-                    break;
+                }
 
-                case 5:
+                case 5 -> {
                     System.out.println("\nSummary of All Accounts:");
                     for (int i = 0; i < totalCustomers; i++) {
                         System.out.println("ID: " + (i + 1) +
                                 " | Name: " + names[i] +
                                 " | Balance: " + balances[i]);
                     }
-                    break;
+                }
 
-                case 6:
+                case 6 -> {
                     System.out.println("Exiting Program...");
                     return;
+                }
 
-                default:
-                    System.out.println("Invalid option. Try again.");
+                default -> System.out.println("Invalid option. Try again.");
             }
         }
     }

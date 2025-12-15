@@ -59,6 +59,7 @@ class Remainder extends Numbers {
 }
 
 public class AfterClassProject4 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -77,38 +78,37 @@ public class AfterClassProject4 {
         int choice = scanner.nextInt();
 
         switch (choice) {
-            case 1:
+            case 1 -> {
                 Addition add = new Addition();
                 add.x = numbers.x;
                 add.y = numbers.y;
                 add.add();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 Subtraction sub = new Subtraction();
                 sub.x = numbers.x;
                 sub.y = numbers.y;
                 sub.sub();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 Multiplication mul = new Multiplication();
                 mul.x = numbers.x;
                 mul.y = numbers.y;
                 mul.mul();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 Division div = new Division();
                 div.x = numbers.x;
                 div.y = numbers.y;
                 div.div();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 Remainder rem = new Remainder();
                 rem.x = numbers.x;
                 rem.y = numbers.y;
                 rem.rem();
-                break;
-            default:
-                System.out.println("Invalid operation selected.");
+            }
+            default -> System.out.println("Invalid operation selected.");
         }
 
         scanner.close();

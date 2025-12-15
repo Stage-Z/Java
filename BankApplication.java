@@ -1,9 +1,11 @@
 import java.util.*;
 
 class Bank {
-    private String Name;
+    private final String Name;
+    @SuppressWarnings("FieldMayBeFinal")
     private int accNumber;
     private double Balance;
+    @SuppressWarnings("FieldMayBeFinal")
     private int employeeID;
 
     public Bank(String Name, int accNumber, double Balance, int employeeID) {
@@ -45,6 +47,7 @@ class Employee extends Bank {
 }
 
 public class BankApplication {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -62,11 +65,21 @@ public class BankApplication {
         Bank user = null;
         boolean canViewAll = false;
 
-        if (EEI == 107) { user = CEO; canViewAll = true; }
-        else if (EEI == 234) { user = Manager1; canViewAll = true; }
-        else if (EEI == 101) { user = Employee1; }
-        else if (EEI == 201) { user = Employee2; }
-        else if (EEI == 301) { user = Employee3; }
+        switch (EEI) {
+            case 107 -> {
+                user = CEO;
+                canViewAll = true;
+            }
+            case 234 -> {
+                user = Manager1;
+                canViewAll = true;
+            }
+            case 101 -> user = Employee1;
+            case 201 -> user = Employee2;
+            case 301 -> user = Employee3;
+            default -> {
+            }
+        }
 
         if (user == null) {
             System.out.println("Invalid Input! Please Redo!");
@@ -89,45 +102,39 @@ public class BankApplication {
 
         if (canViewAll) {
             switch (choice) {
-                case 1:
+                case 1 -> {
                     for (Bank b : allEmployees) {
                         b.checkEmployeeDetails();
                         System.out.println();
                     }
-                    break;
-                case 2:
-                    user.checkEmployeeDetails();
-                    break;
-                case 3:
+                }
+                case 2 -> user.checkEmployeeDetails();
+                case 3 -> {
                     System.out.println("Enter amount to be deducted: ");
                     double moneyDeduction = sc.nextDouble();
                     user.withdrawMoney(moneyDeduction);
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("Enter amount to be deposited: ");
                     double moneyIncrease = sc.nextDouble();
                     user.depositMoney(moneyIncrease);
-                    break;
-                default:
-                    System.out.println("Invalid choice.");
+                }
+                default -> System.out.println("Invalid choice.");
             }
         } else {
             switch (choice) {
-                case 1:
-                    user.checkEmployeeDetails();
-                    break;
-                case 2:
+                case 1 -> user.checkEmployeeDetails();
+                case 2 -> {
                     System.out.println("Enter amount to be deducted: ");
                     double moneyDeduction = sc.nextDouble();
                     user.withdrawMoney(moneyDeduction);
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("Enter amount to be deposited: ");
                     double moneyIncrease = sc.nextDouble();
                     user.depositMoney(moneyIncrease);
-                    break;
-                default:
-                    System.out.println("Invalid choice.");
+                }
+                default -> System.out.println("Invalid choice.");
             }
         }
 

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Practice {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
         System.out.println("Enter 2 numbers: ");

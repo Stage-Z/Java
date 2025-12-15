@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class GradingSystem {  
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         int sum = 0;
         String result = "";
